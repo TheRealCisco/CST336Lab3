@@ -55,25 +55,25 @@ function displayHand($hand, $playerNum)
     echo "<img class='playerCard' src='players/" . $players[$playerNum] . ".jpg' />";
     if($players[$playerNum] == 'BatMan')
         {
-            echo "BatMan";
+            echo "<h2> BatMan </h2>";
         }
     else if($players[$playerNum] == 'SuperMan')
         {
-            echo "SuperMan";
+            echo "<h2> SuperMan</h2>";
         }
     else if($players[$playerNum] == 'WonderWoman')
         {
-            echo "WonderWoman";
+            echo "<h2>WonderWoman</h2>";
         }
     else
     {
-        echo "The Joker";
+        echo "<h2>The Joker</h2>";
     }
     echo "<br> </br>";
    for($i = 0; $i < sizeof($hand); $i++) {
         echo "<img id='playingCards'  src='cards/". $hand[$i] . ".png' />";
         }
-    echo "<h2> Score: " . $scores[$playerNum] . " </h2>";
+    echo "<h2 id='score' > Score: " . $scores[$playerNum] . " </h2>";
     $playerNum++;
     echo "<br> </br>";
 }
@@ -136,7 +136,7 @@ function displayWinner() {
     </head>
     <body>
         <h1> SilverJack </h1>
-        <div>
+        <div class='hands'>
         <?php
             shuffle($players);
             for($j = 0; $j < 4; $j++){
